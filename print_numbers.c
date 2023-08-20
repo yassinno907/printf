@@ -10,12 +10,12 @@ int  print_number(long int n)
 	if (n < 0)
 	{
 		j += 1;
-		putchar('-');
+		myputchar('-');
 		i = -i;
 	}
 	if (n == 0)
 	{
-		putchar('0');
+		myputchar('0');
 	}
 	
 	if ((i / 10))
@@ -23,6 +23,6 @@ int  print_number(long int n)
 		j += 1;
 		print_number(i / 10);
 	}
-	putchar((i % 10) + '0');
+	myputchar((i % 10) + '0');
 	return (j);
 }

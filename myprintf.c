@@ -24,23 +24,23 @@ int _printf(const char *format, ...)
         {
             i++;
             if (format[i] == 'c')
-                sum += putchar((char)va_arg(my_char, int));
+                sum += myputchar((char)va_arg(my_char, int));
             if (format[i] == 's')
                 sum += print_string(va_arg(my_char, char *));
             if (format[i] == '%')
-                sum += putchar('%');
+                sum += myputchar('%');
             if (format[i] == 'd' || format[i] == 'i')
                 sum += print_number(va_arg(my_char, int));
             else if (format[i] != 's' && format[i] != 'd' &&
             format[i] != 'i' && format[i] != '%' && format[i] != 'c')
             { 
-                 sum += putchar(format[i - 1]);
-                 sum += putchar(format[i]);
+                 sum += myputchar(format[i - 1]);
+                 sum += myputchar(format[i]);
             }    
         }
         else
         {
-            putchar(format[i]);
+            myputchar(format[i]);
             sum += 1;
         }
         i++;

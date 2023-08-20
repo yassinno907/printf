@@ -16,7 +16,7 @@ int print_string(char *s)
     i = 0;
     while (i < len)
     {
-        putchar(s[i]);
+        myputchar(s[i]);
         i++;
     }
     i++;
