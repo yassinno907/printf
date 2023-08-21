@@ -27,4 +27,3 @@ int print_string(char *s)
 	i++;
 	return (i);
 }
-
