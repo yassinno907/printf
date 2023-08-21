@@ -40,8 +40,8 @@ int _printf(const char *format, ...)
         }
         else
         {
-            myputchar(format[i]);
-            sum += 1;
+            sum += myputchar(format[i]);
+            
         }
         i++;
     }

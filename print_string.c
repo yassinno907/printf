@@ -2,17 +2,20 @@
 #include <stdio.h>
 #include <string.h>
 
+
+
 int print_string(char *s)
 {
     int i;
     int len;
+
     if (s == NULL)
     {
         print_string("(null)");
-        return (strlen("(null)"));
+        return (_strlen("(null)"));
     }
     
-    len = strlen(s);
+    len = _strlen(s);
     i = 0;
     while (i < len)
     {
@@ -22,3 +25,4 @@ int print_string(char *s)
     i++;
     return (i);
 }
+
