@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%')
 				sum += myputchar('%');
 			if (format[i] == 'd' || format[i] == 'i')
-				sum += handle_numbers(va_arg(my_char, int));
+				sum += print_number(va_arg(my_char, int));
 			if (format[i] != 's' && format[i] != 'd' &&
 			format[i] != 'i' && format[i] != '%' && format[i] != 'c'
 			&& format[i] != '\0')

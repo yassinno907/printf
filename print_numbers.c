@@ -3,20 +3,29 @@
 /**
  * print_number - function that print numbers
  * @n: the number
+ * Return: len of the number
 */
-void print_number(int n)
+int  print_number(long int n)
 {
-	unsigned int i = 0;
+	unsigned long int i = 0;
+	int j = 0;
 
-	i = n;
 	if (n < 0)
 	{
+		j += 1;
 		myputchar('-');
-		i = -i;
+		n = -n;
 	}
-	if ((i / 10))
+	i = n;
+	while (i != 0)
 	{
-		print_number(i / 10);
+		i /= 10;
+		j++;
 	}
-	myputchar((i % 10) + '0');
+	if ((n / 10))
+	{
+		print_number(n / 10);
+	}
+	myputchar((n % 10) + '0');
+	return (j);
 }
