@@ -1,9 +1,13 @@
 #include "main.h"
 #include <stdio.h>
-
-int  print_number(long int n)
+/**
+ * print_number - function that print numbers
+ * @n: the number
+ * Return: the size
+*/
+int  print_number(int n)
 {
-	unsigned long int i = 0;
+	unsigned int i = 0;
 	int j = 0;
 
 	i = n;
@@ -17,7 +21,6 @@ int  print_number(long int n)
 	{
 		myputchar('0');
 	}
-	
 	if ((i / 10))
 	{
 		j += 1;
