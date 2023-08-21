@@ -5,9 +5,9 @@
  * @n: the number
  * Return: the size
 */
-int  print_number(int n)
+int  print_number(long int n)
 {
-	unsigned int i = 0;
+	unsigned long int i = 0;
 	int j = 0;
 
 	i = n;
