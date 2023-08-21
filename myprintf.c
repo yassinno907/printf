@@ -13,8 +13,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int sum = 0;
 
-	if (!format  || !format[0] ||
-	(format[0] == '%' && !format[1]))
+	if (!format  || !format[0])
 		return (-1);
 	va_start(my_char, format);
 	while (format[i])
