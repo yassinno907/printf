@@ -10,6 +10,8 @@ int  print_number(long int n)
 	unsigned long int i = 0;
 	int j = 0;
 
+	if (n == 0)
+		j += 1;
 	if (n < 0)
 	{
 		j += 1;
