@@ -25,5 +25,5 @@ int print_string(char *s)
 		i++;
 	}
 	i++;
-	return (i);
+	return (len);
 }
