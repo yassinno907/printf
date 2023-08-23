@@ -17,8 +17,6 @@ int  print_number(int n)
 		n = -n;
 	}
 	i = n;
-	if (i == 0)
-		j = 1;
 	while (i != 0)
 	{
 		i /= 10;
