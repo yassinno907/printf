@@ -24,6 +24,5 @@ int print_string(char *s)
 		myputchar(s[i]);
 		i++;
 	}
-	i++;
 	return (len);
 }
