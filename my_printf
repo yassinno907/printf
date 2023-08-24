@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include "main.h"
+/**
+ * my_printf - functin that print string
+ * @*format: string to print
+ * Return: count
+ * */
+
+int my_printf(const char *format, ...) {
+  va_list args; // declare a variable of type va_list
+  va_start(args, format); // initialize it with the last fixed argument
+  int count = 0; // count the number of characters printed
+  while (*format) { // loop through the format string
+    if (*format == '%') { // if a format specifier is found
+      format++; // move to the next character
+      switch (*format) { // check what type of argument is expected
+        case 'd': // if an int is expected
+          int d = va_arg(args, int); // access the next argument as an int
+          count += printf("%d", d); // print it and update the count
+          break;
+        case 'c': // if a char is expected
+          int c = va_arg(args, int); // access the next argument as an int (char is promoted to int)
+          count += printf("%c", c); // print it and update the count
+          break;
+        case 's': // if a string is expected
+          char *s = va_arg(args, char *); // access the next argument as a char pointer
+          count += printf("%s", s); // print it and update the count
+          break;
+        case 'b': // if an unsigned int in binary is expected
+          unsigned int b = va_arg(args, unsigned int); // access the next argument as an unsigned int
+          char buffer[33]; // create a buffer to store the binary representation
+          buffer[32] = '\0'; // add a null terminator at the end
+          for (int i = 31; i >= 0; i--) { // loop through each bit from right to left
+            buffer[i] = (b & 1) ? '1' : '0'; // set the buffer character to 1 or 0 depending on the bit value
+            b >>= 1; // right shift the unsigned int by one bit
+          }
+          count += printf("%s", buffer); // print the buffer and update the count
+          break;
+        default: // if an unknown format specifier is found
+          count += printf("%%"); // print a literal %
+          count += printf("%c", *format); // print the unknown specifier
+      }
+    } else { // if a normal character is found
+      count += printf("%c", *format); // print it and update the count
+    }
+    format++; // move to the next character
+  }
+  va_end(args); // clean up the memory
+  return (count); // return the number of characters printed
+}
+
